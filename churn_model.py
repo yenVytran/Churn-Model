@@ -19,7 +19,7 @@ df=pd.get_dummies(df, columns=['Geography', 'Gender'], drop_first=True)
 # Mã hóa biến phân loại Geography và Gender bằng One-Hot Encoding
 df
 df.nunique()
-
+df.drop(columns=["RowNumber","CustomerId","Surname"],inplace=True)
 ax=sns.countplot(x=df['Exited'], data=df);
 plt.title('Exited')
 plt.show()
